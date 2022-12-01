@@ -11,10 +11,11 @@ import com.semanticsquare.thrillio.managers.BookmarkManager;
 import com.semanticsquare.thrillio.managers.UserManager;
 
 public class DataStore {
-	private static final int USER_BOOKMARK_LIMIT = 5;
-	private static final int BOOKMARK_COUNT_PER_TYPE = 5;
-	private static final int BOOKMARK_TYPE_COUNT = 3;
-	private static final int TOTAL_USER_COUNT = 5;
+	public static final int USER_BOOKMARK_LIMIT = 5;
+	public static final int BOOKMARK_COUNT_PER_TYPE = 5;
+	public static final int BOOKMARK_TYPE_COUNT = 3;
+	public static final int TOTAL_USER_COUNT = 5;
+
 	private static User[] users = new User[TOTAL_USER_COUNT];
 
 	public static User[] getUsers() {
@@ -28,7 +29,8 @@ public class DataStore {
 	}
 
 	private static UserBookmark[] userBookmarks = new UserBookmark[TOTAL_USER_COUNT * USER_BOOKMARK_LIMIT];
-
+	private static int bookmarkIndex;
+	
 	public static void loadData() {
 		loadUsers();
 		loadWebLinks();
@@ -93,5 +95,10 @@ public class DataStore {
 				BookGenre.TECHNICAL, 4.5);
 		bookmarks[2][4] = BookmarkManager.getInstance().createBook(4004, "Effective Java Programming Language Guide",
 				2007, "Prentice Hall", new String[] { "Joshua Bloch" }, BookGenre.TECHNICAL, 4.9);
+	}
+
+	public static void add(UserBookmark userBookmark) {
+		userBookmarks[bookmarkIndex] = userBookmark;
+		bookmarkIndex++;
 	}
 }

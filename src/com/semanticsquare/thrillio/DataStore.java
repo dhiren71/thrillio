@@ -11,10 +11,10 @@ import com.semanticsquare.thrillio.managers.BookmarkManager;
 import com.semanticsquare.thrillio.managers.UserManager;
 
 public class DataStore {
-	public static final int USER_BOOKMARK_LIMIT = 5;
-	public static final int BOOKMARK_COUNT_PER_TYPE = 5;
 	public static final int BOOKMARK_TYPE_COUNT = 3;
+	public static final int BOOKMARK_COUNT_PER_TYPE = 5;
 	public static final int TOTAL_USER_COUNT = 5;
+	public static final int USER_BOOKMARK_LIMIT = 5;
 
 	private static User[] users = new User[TOTAL_USER_COUNT];
 
@@ -30,7 +30,7 @@ public class DataStore {
 
 	private static UserBookmark[] userBookmarks = new UserBookmark[TOTAL_USER_COUNT * USER_BOOKMARK_LIMIT];
 	private static int bookmarkIndex;
-	
+
 	public static void loadData() {
 		loadUsers();
 		loadWebLinks();
@@ -52,18 +52,11 @@ public class DataStore {
 	}
 
 	private static void loadWebLinks() {
-		bookmarks[0][0] = BookmarkManager.getInstance().createWebLink(2000, "Taming Tiger", "Part 2",
-				"http://www.javaworld.com/article/2072759/core-java/taming-tiger--part-2.html	http://www.javaworld.com");
-		bookmarks[0][1] = BookmarkManager.getInstance().createWebLink(2001,
-				"How do I import a pre-existing Java project into Eclipse and get up and running?",
-				"http://stackoverflow.com/questions/142863/how-do-i-import-a-pre-existing-java-project-into-eclipse-and-get-up-and-running",
-				"http://www.stackoverflow.com");
-		bookmarks[0][2] = BookmarkManager.getInstance().createWebLink(2002, "Interface vs Abstract Class",
-				"http://mindprod.com/jgloss/interfacevsabstract.html", "http://mindprod.com");
-		bookmarks[0][3] = BookmarkManager.getInstance().createWebLink(2003, "NIO tutorial by Greg Travis",
-				"http://cs.brown.edu/courses/cs161/papers/j-nio-ltr.pdf", "http://cs.brown.edu");
-		bookmarks[0][4] = BookmarkManager.getInstance().createWebLink(2004, "Virtual Hosting and Tomcat",
-				"http://tomcat.apache.org/tomcat-6.0-doc/virtual-hosting-howto.html", "http://tomcat.apache.org");
+		bookmarks[0][0] = BookmarkManager.getInstance().createWebLink(2000, "Taming Tiger",  "http://www.javaworld.com/article/2072759/core-java/taming-tiger--part-2.html", "http://www.javaworld.com");
+		bookmarks[0][1] = BookmarkManager.getInstance().createWebLink(2001, "How do I import a pre-existing Java project into Eclipse and get up and running?", "http://stackoverflow.com/questions/142863/how-do-i-import-a-pre-existing-java-project-into-eclipse-and-get-up-and-running", "http://www.stackoverflow.com");
+		bookmarks[0][2] = BookmarkManager.getInstance().createWebLink(2002, "Interface vs Abstract Class", "http://mindprod.com/jgloss/interfacevsabstract.html", "http://mindprod.com");
+		bookmarks[0][3] = BookmarkManager.getInstance().createWebLink(2003, "NIO tutorial by Greg Travis", "http://cs.brown.edu/courses/cs161/papers/j-nio-ltr.pdf", "http://cs.brown.edu");
+		bookmarks[0][4] = BookmarkManager.getInstance().createWebLink(2004, "Virtual Hosting and Tomcat", "http://tomcat.apache.org/tomcat-6.0-doc/virtual-hosting-howto.html", "http://tomcat.apache.org");
 
 	}
 

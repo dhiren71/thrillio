@@ -21,6 +21,13 @@ public class Launch {
 		printBookmarkData();
 	}
 
+	private static void printUserData() {
+		for (User user : users) {
+			System.out.println(user);
+		}
+
+	}
+
 	private static void printBookmarkData() {
 		for (Bookmark[] bookmarkList : bookmarks) {
 			for (Bookmark bookmark : bookmarkList) {
@@ -29,16 +36,9 @@ public class Launch {
 		}
 	}
 
-	private static void printUserData() {
-		for (User user : users) {
-			System.out.println(user);
-		}
-
-	}
-
 	private static void startBookmarking() {
 		System.out.println("\n2. Bookmarking...");
-		for(User user: users) {
+		for (User user : users) {
 			View.bookmark(user, bookmarks);
 		}
 	}

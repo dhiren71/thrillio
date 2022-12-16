@@ -39,8 +39,9 @@ public class View {
 	}
 
 	private static String getKidFriendlyStatusDecision(Bookmark bookmark) {
+		double randomVal = Math.random();
 		return Math.random() < 0.4 ? KidFriendlyStatus.APPROVED
-				: (Math.random() > 0.4 && Math.random() < 0.8) ? KidFriendlyStatus.REJECTED : KidFriendlyStatus.UNKNOWN;
+				: (randomVal > 0.4 && randomVal < 0.8) ? KidFriendlyStatus.REJECTED : KidFriendlyStatus.UNKNOWN;
 	}
 
 	private static boolean getBookmarkDecision(Bookmark bookmark) {
